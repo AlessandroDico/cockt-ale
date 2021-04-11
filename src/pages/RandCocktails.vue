@@ -107,10 +107,7 @@ import SideBar from "./../components/SideBar.vue";
         },
         methods: {
             getSingleCocktail (searchedCocktail) {
-                // console.log(searchedCocktail.length);
                 if (searchedCocktail.length > 0) {
-                    // this.isFiltred = false;
-                    // this.$emit('falseCheck', this.isFiltred);
                     this.axios.get(this.base_url + 'search.php?s=' + searchedCocktail)
                     .then(response => {
                         this.noResoluts = false;
@@ -139,8 +136,6 @@ import SideBar from "./../components/SideBar.vue";
                     let currentDrinkITInstructions = this.allDrinks[i].strInstructionsIT;
 
                     if (item == currentDrink) {
-                        // console.log(currentDrink);
-                        // console.log(this.allDrinks[i].strIngredient1);
                         this.openSingleDrink = true;
                         this.currentDrinkName = currentDrink;
                         this.currentDrinkImage = currentDrinkImage;
@@ -260,7 +255,6 @@ import SideBar from "./../components/SideBar.vue";
                         this.axios.get(this.base_url + 'filter.php?a=' + searchType[i])
                         .then(response => {
                             console.log(response.data.drinks);
-                            // var results = response.data.drinks;
                             for (let j = 0; j < response.data.drinks.length; j++) {
                                 this.filtredByIngredients.push(response.data.drinks[j]);                                
                             }
@@ -271,15 +265,11 @@ import SideBar from "./../components/SideBar.vue";
                     this.isFiltred = false;
                 }
             },
-            containsKey(obj, key ) {
-                return Object.keys(obj).includes(key);
-            },
         },
         mounted() {
             console.log(this.base_url);
             var counter = 20;
             for (let i = 0; i < counter; i++) {
-                // console.log(counter);
                 this.axios.get(this.base_url + 'random.php')
                 .then(response => {
                     const cocktail = response.data.drinks[0];
@@ -289,8 +279,6 @@ import SideBar from "./../components/SideBar.vue";
 
                         this.allDrinks.push(cocktail)
                         console.log(this.allDrinks);
-                        // const hasName = this.containsKey(response.data.drinks[0], 'strIngredient1');
-                        // console.log(hasName);
                     } 
                 })                
             }
@@ -307,6 +295,7 @@ import SideBar from "./../components/SideBar.vue";
         border: 1px solid #fff;
         margin: 10px;
     }
+
     button.btn-after-search:hover {
         background-color: #76707a;
     }
@@ -352,8 +341,7 @@ import SideBar from "./../components/SideBar.vue";
                 cursor: pointer;
             }
             
-            &::-webkit-scrollbar-track
-            {
+            &::-webkit-scrollbar-track {
                 -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
                 border-radius: 10px;
                 background-color: transparent;
@@ -362,8 +350,7 @@ import SideBar from "./../components/SideBar.vue";
                 margin: 40px;
             }
 
-            &::-webkit-scrollbar
-            {
+            &::-webkit-scrollbar {
                 width: 12px;
                 background-color: transparent;
                 // height: 40px;
@@ -371,8 +358,7 @@ import SideBar from "./../components/SideBar.vue";
                 margin: 40px;
             }
 
-            &::-webkit-scrollbar-thumb
-            {
+            &::-webkit-scrollbar-thumb {
                 border-radius: 10px;
                 -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
                 background-color: #555;

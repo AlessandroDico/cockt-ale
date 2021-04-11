@@ -9,10 +9,10 @@
 </template>
 
 <script>
-export default {
-    name: "Card",
-    props: ["image", "name", "id"],
-}
+	export default {
+		name: "Card",
+		props: ["image", "name", "id"],
+	}
 </script>
 
 <style lang="scss" scoped>

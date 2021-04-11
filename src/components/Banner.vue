@@ -7,14 +7,14 @@
 </template>
 
 <script>
-import NeonWrite from './../components/NeonWrite.vue';
+	import NeonWrite from './../components/NeonWrite.vue';
 
-    export default {
-        name: "Banner",
-        components: {
-            NeonWrite
-        }
-    }
+		export default {
+			name: "Banner",
+			components: {
+				NeonWrite
+			}
+		}
 </script>
 
 <style lang="scss" scoped>

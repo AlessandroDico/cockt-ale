@@ -37,14 +37,15 @@
             }
         },
         methods: {
-          getInputValue () {
-            console.log(this.searchIngredient);
-            this.$emit('searchIngredient', this.searchIngredient);
-          },
-          getTypeValue () {
-            console.log(this.searchType);
-            this.$emit('searchType', this.searchType);
-          },
+			getInputValue () {
+            	console.log(this.searchIngredient);
+            	this.$emit('searchIngredient', this.searchIngredient);
+			},
+
+			getTypeValue () {
+            	console.log(this.searchType);
+            	this.$emit('searchType', this.searchType);
+			},
         },
         mounted() {
             this.ingredientsSort = this.ingredients.sort();
@@ -58,9 +59,7 @@
     .sidebar-container {
         text-align: left;
         padding: 20px;
-        // height: 600px;
         max-width: 200px;
-        /* margin-left: 20px; */
         position: absolute;
         top: 10px;
         left: 10px;
@@ -71,6 +70,7 @@
             color: #111;
             font-weight: bold;
         }
+		
         label {
             margin-left: 5px;
         }

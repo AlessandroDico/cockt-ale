@@ -4,9 +4,6 @@
       <div class="landing-page-container">
         <NeonWrite :welcome="'Welcome to'"/>
         <div class="dot-container">
-        <!-- <div class="landing-page-write">
-            <h1>Hai voglia di un drink?</h1>
-        </div> -->
         </div>
         <button class="pass-button btn btn-lg btn-info text-uppercase" @click="enterInApp">choose your favorite drink</button>
       </div>
@@ -19,17 +16,17 @@ import NeonWrite from './../components/NeonWrite.vue';
     export default {
         name: "LandingPage",
         components: {
-          NeonWrite
+			NeonWrite
         },
         data() {
             return {
-              landingPage: true
+				landingPage: true
             }
         },
         methods: {
             enterInApp () {
-              this.landingPage = false;
-              this.$emit('isLanding', this.landingPage);
+				this.landingPage = false;
+				this.$emit('isLanding', this.landingPage);
             }
         }
     }
@@ -37,121 +34,122 @@ import NeonWrite from './../components/NeonWrite.vue';
 
 
 <style lang="scss" >
-@mixin dots($count) {
-  $text-shadow: ();
-  @for $i from 0 through $count {
-    $text-shadow: $text-shadow,
-    (-.5+(random()) * 3) + em
-    (-.5+(random()) * 3) + em
-    7px
-    hsla(random() * 360, 100%, 50%,.9);
-  }
-  text-shadow: $text-shadow;
-}
+	@mixin dots($count) {
+		$text-shadow: ();
 
-.landing-page-container{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px 0 100px 0;
-    background-color: #112233a3;
+		@for $i from 0 through $count {
+			$text-shadow: $text-shadow,
+			(-.5+(random()) * 3) + em
+			(-.5+(random()) * 3) + em
+			7px
+			hsla(random() * 360, 100%, 50%,.9);
+		}
+		text-shadow: $text-shadow;
+	}
 
-    h1 {
-        font-size: 25px;
-    }
-    button.pass-button.btn-info.btn-lg, .btn-group-lg {
-        position: relative;
-        z-index: 10;
-        padding: 50px 100px;
-        background-color: #831690;
-        transition: 0.2s ease-in;
+	.landing-page-container{
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		padding: 100px 0 100px 0;
+		background-color: #112233a3;
 
-        &:hover {
-            background-color: #22036d;
-        }
-    }
-}
+		h1 {
+			font-size: 25px;
+		}
 
-.dot-container{
-  overflow: hidden;
-}
+		button.pass-button.btn-info.btn-lg, .btn-group-lg {
+			position: relative;
+			z-index: 10;
+			padding: 50px 100px;
+			background-color: #831690;
+			transition: 0.2s ease-in;
 
-.second-animation-contanier, .animation-container {
-  display: block;
-  font-size: 52px;
-  color: transparent;
-  height: 100%;
-}
+			&:hover {
+				background-color: #22036d;
+			}
+		}
+	}
 
-.animation-container::before, .animation-container::after,
-.second-animation-contanier::before, .second-animation-contanier::after {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 3em;
-  height: 3em;
-  content: '.';
-  mix-blend-mode: screen;
-  animation: 4s -27s move infinite ease-in-out alternate;
-}
+	.dot-container{
+		overflow: hidden;
+	}
 
-.animation-container::after {
-    background: linear-gradient(0deg, rgb(1, 3, 5) 23%, rgba(2, 1, 5, 0.981) 49%, rgba(0,0,0,1) 88%);
-    // background: linear-gradient(0deg, rgba(1,33,106,1) 23%, rgba(23,0,85,0.9808298319327731) 49%, rgba(0,0,0,1) 88%);
-}
+	.second-animation-contanier, .animation-container {
+		display: block;
+		font-size: 52px;
+		color: transparent;
+		height: 100%;
+	}
 
-.second-animation-contanier::before {
-  @include dots(40);
-  animation-duration: 15s;
-  animation-delay: -27s;
-}
+	.animation-container::before, .animation-container::after,
+	.second-animation-contanier::before, .second-animation-contanier::after {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 3em;
+		height: 3em;
+		content: '.';
+		mix-blend-mode: screen;
+		animation: 4s -27s move infinite ease-in-out alternate;
+	}
 
-.second-animation-contanier::after {
-  @include dots(40);
-  animation-duration: 15s;
-  animation-delay: -32s;
-}
+	.animation-container::after {
+		background: linear-gradient(0deg, rgb(1, 3, 5) 23%, rgba(2, 1, 5, 0.981) 49%, rgba(0,0,0,1) 88%);
+	}
 
-.animation-container::before {
-  @include dots(40);
-  animation-duration: 42s;
-  animation-delay: -23s;
-}
+	.second-animation-contanier::before {
+		@include dots(40);
+		animation-duration: 15s;
+		animation-delay: -27s;
+	}
 
-.animation-container::after {
-  @include dots(40);
-  animation-duration: 41s;
-  animation-delay: -19s;
-}
+	.second-animation-contanier::after {
+		@include dots(40);
+		animation-duration: 15s;
+		animation-delay: -32s;
+	}
 
-.dot-container::before {
-  letter-spacing: .5em;
-  text-shadow: 0 0 5px #000;
-  white-space: pre;
-  color: #fff;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  transform: translate(-50%,-50%);
-  text-align: center;
-  color: #999;
-}
+	.animation-container::before {
+		@include dots(40);
+		animation-duration: 42s;
+		animation-delay: -23s;
+	}
 
-.dot-container:first-line {
-  font-size: 300%;
-  color: #fff;
-}
+	.animation-container::after {
+		@include dots(40);
+		animation-duration: 41s;
+		animation-delay: -19s;
+	}
 
-@keyframes move {
-  from {
-    transform: rotate(0deg) scale(12) translateX(-20px);
-  }
-  to {
-    transform: rotate(360deg) scale(18) translateX(20px);
-  }
-}
+	.dot-container::before {
+		letter-spacing: .5em;
+		text-shadow: 0 0 5px #000;
+		white-space: pre;
+		color: #fff;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		z-index: 1;
+		transform: translate(-50%,-50%);
+		text-align: center;
+		color: #999;
+	}
+
+	.dot-container:first-line {
+		font-size: 300%;
+		color: #fff;
+	}
+
+	@keyframes move {
+		from {
+			transform: rotate(0deg) scale(12) translateX(-20px);
+		}
+		to {
+			transform: rotate(360deg) scale(18) translateX(20px);
+		}
+	}
 
 </style>

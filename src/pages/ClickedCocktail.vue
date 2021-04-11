@@ -28,10 +28,10 @@
 </template>
 
 <script>
-export default {
-    name: "ClickedCocktail",
-    props: ["image", "name", "category", "glass", "ingredient1", "ingredient2", "ingredient3", "ingredient4", "ingredient5", "ingredient6", "ingredient7", "ingredient8", "ingredient9", "ingredient10", "ingredient11", "ingredient12", "Instructions", "ITInstructions" ],
-}
+	export default {
+		name: "ClickedCocktail",
+		props: ["image", "name", "category", "glass", "ingredient1", "ingredient2", "ingredient3", "ingredient4", "ingredient5", "ingredient6", "ingredient7", "ingredient8", "ingredient9", "ingredient10", "ingredient11", "ingredient12", "Instructions", "ITInstructions" ],
+	}
 </script>
 
 <style lang="scss" scoped>
